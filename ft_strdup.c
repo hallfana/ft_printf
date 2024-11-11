@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:54:57 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 22:34:49 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 00:35:02 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,14 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-
-int	ft_strcmp(const char *s1, const char *s2)
+char	*ft_toupper(char *c)
 {
 	int	i;
 
 	i = 0;
-	while ((unsigned char)s1[i] && (unsigned char)s2[i])
+	while (c[i])
 	{
-		if ((unsigned char)s1[i] != (unsigned char)s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
+		c[i] = c[i] - 32;
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return (c);
 }
