@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:18:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 21:30:18 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 21:30:34 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_printf(const char *fmt, ...)
 	return (0);
 }
 
-void	main(void)
+/*void	main(void)
 {
 	ft_printf("rehtg:%c:vetvnrej", 'H');
-}
+}*/
