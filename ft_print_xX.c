@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 00:18:23 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/12 00:29:46 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 00:32:48 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,25 @@ char *ft_to_base_16(unsigned int n)
 	return (dst);
 }
 
-//#include <stdio.h>
 int ft_print_x(unsigned int nb)
 {
-    char *s;
-    int l;
+    char	*s;
+    int		l;
 
     s = ft_to_base_16(nb);
-	//printf("test:%s", s);
+	l = ft_print_s(s);
+	free(s);
+	return (l);
+}
+
+int ft_print_X(unsigned int nb)
+{
+    char	*s;
+    int 	l;
+
+    s = ft_to_base_16(nb);
+	while (*s)
+		*s = *s - 32;
 	l = ft_print_s(s);
 	free(s);
 	return (l);
