@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:18:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 23:02:02 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 23:03:58 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ int	ft_printf(const char *fmt, ...)
 	{
 		if (fmt[i] == '%' && ft_is_prefix(fmt[i + 1]))
 		{
-			ft_route_arg(ap, fmt, &i, &len);
+			if (fmt[i + 1] == '%')
+				len += ft_print_c('%');
+			else
+				ft_route_arg(ap, fmt, &i, &len);
 			i += 2;
 			continue ;
 		}
