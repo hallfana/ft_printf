@@ -6,13 +6,13 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:18:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 21:20:35 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 21:21:09 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_route_arg(va_list ap, char *fmt, int i)
+int	ft_route_arg(va_list ap, const char *fmt, int i)
 {
 	int	printed;
 
