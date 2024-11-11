@@ -6,16 +6,56 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 23:11:08 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 23:26:15 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 00:02:44 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_print_u(int	nb)
+int nblen_u(long n)
 {
-	if ((long long)nb < 0)
-		return (ft_print_s("4294862765"));
-	else
-		return (ft_print_d(nb));
+    int	len;
+
+	len = 0;
+    if (n == 0)
+		return 1;
+    while (n > 0)
+	{
+        n /= 10;
+        len++;
+    }
+    return (len);
+}
+
+char *ft_u_itoa(unsigned int n)
+{
+    long	nb;
+	char	*dst;
+    int 	i;
+
+	nb = (long)n;
+    if (n == 0)
+		return ft_strdup("0");
+    dst = (char *)malloc(sizeof(char) * (nblen_u(nb) + 1));
+    if (!dst)
+        return NULL;
+    i = nblen_u(nb) - 1;
+	while (nb > 0)
+	{
+        dst[i--] = (nb % 10) + '0';
+        nb /= 10;
+    }
+    dst[nblen_u(n)] = '\0';
+	return (dst);
+}
+
+int ft_print_u(unsigned int nb)
+{
+    char *s;
+    int l;
+
+    s = ft_u_itoa(nb);
+	l = ft_print_s(s);
+	free(s);
+	return (l);
 }
