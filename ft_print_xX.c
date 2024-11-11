@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 00:18:23 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/12 00:32:48 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 00:33:22 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,10 @@ int ft_print_X(unsigned int nb)
 
     s = ft_to_base_16(nb);
 	while (*s)
+	{
 		*s = *s - 32;
+		s++;
+	}
 	l = ft_print_s(s);
 	free(s);
 	return (l);
