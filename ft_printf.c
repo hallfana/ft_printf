@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:18:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 21:04:33 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 21:11:19 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,22 @@ int	ft_printf(const char *fmt, ...)
 {
 	size_t	len;
 	va_list	ap;
+	int		i;
 
 	va_start(ap, fmt);
 	len = 0;
-	while (*fmt)
+	i = 0;
+	while (fmt[i])
 	{
-		if (*fmt == '%')
+		if (fmt[i] == '%')
 		{
 			len += 0;
-			fmt++;
+			i++;
 			continue ;
 		}
-		print_c((int)*fmt);
+		print_c((int)fmt[i]);
 		len++;
-		fmt++;
+		i++;
 	}
 	return (0);
 }
