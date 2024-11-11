@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:19:39 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 22:04:45 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 22:34:06 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int		ft_route_arg(va_list ap, const char *fmt, int *i);
 char	*ft_strdup(const char *s);
 char	*ft_strndup(const char *s, size_t sw);
 size_t	ft_strlen(const char *s);
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif
