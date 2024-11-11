@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 20:19:39 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 21:48:03 by samberna         ###   ########.fr       */
+/*   Created: 2024/11/11 21:39:35 by samberna          #+#    #+#             */
+/*   Updated: 2024/11/11 21:49:40 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-typedef struct s_flag
+int	ft_putnbr_l(long nb, int *len)
 {
-	int	type;
-	int	width;
-	int	moin;
-	int	zero;
-	int	point;
-	int	star;
-}	t_flag;
+	if (nb < 0)
+	{
+		nb *= -1;
+		*len += ft_print_c('-');
+	}
+	if (nb < 10)
+		*len += ft_print_c((char)(nb + '0'));
+	else
+	{
+		ft_putnbr_l(nb / 10, len);
+		*len += ft_print_c((char)((nb % 10) + '0'));
+	}
+}
 
+int ft_print_d(long	nb)
+{
+	int	len;
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
-
-int	ft_printf(const char *fmt, ...);
-int	ft_print_c(char	c);
-int	ft_print_s(char	*str);
-int ft_print_d(long	nb);
-int	ft_route_arg(va_list ap, const char *fmt, int *i);
-
-#endif
+	len = 0;
+	ft_putnbr_l(nb, &len);
+	return len;
+}

@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_s.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 20:19:39 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 21:48:03 by samberna         ###   ########.fr       */
+/*   Created: 2024/11/11 20:41:50 by samberna          #+#    #+#             */
+/*   Updated: 2024/11/11 21:38:15 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-typedef struct s_flag
+int	ft_print_s(char	*str)
 {
-	int	type;
-	int	width;
-	int	moin;
-	int	zero;
-	int	point;
-	int	star;
-}	t_flag;
+	int	i;
 
-
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
-
-int	ft_printf(const char *fmt, ...);
-int	ft_print_c(char	c);
-int	ft_print_s(char	*str);
-int ft_print_d(long	nb);
-int	ft_route_arg(va_list ap, const char *fmt, int *i);
-
-#endif
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
+}
