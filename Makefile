@@ -18,7 +18,7 @@ bonus : clean
 	gcc $(FLAGS) -c $(SRC) $(BONUS)
 	ar rcs $(NAME) $(OBJ_BONUS)
 
-clean : fclean
+clean :
 	rm -f $(NAME)
 
 fclean : clean
