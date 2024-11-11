@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:18:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 23:06:00 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 23:13:55 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_route_arg(va_list ap, const char *fmt, int *i, int *len)
 	if (fmt[*i + 1] && fmt[*i + 1] == 'i')
 		*len += ft_print_d((int)va_arg(ap, int));
 	if (fmt[*i + 1] && fmt[*i + 1] == 'u')
-		*len += ft_print_d((unsigned int)va_arg(ap, unsigned int));
+		*len += ft_print_u((unsigned int)va_arg(ap, unsigned int));
 	/*if (fmt[*i + 1] && fmt[*i + 1] == 'x')
 		;
 	if (fmt[*i + 1] && fmt[*i + 1] == 'X')
@@ -77,7 +77,7 @@ int	ft_printf(const char *fmt, ...)
 	return (len);
 }
 
-/*
+
 void	main(void)
 {
 	//printf("real \n%d\n, fake \n%d\n", printf("rehtg:%%:%c:%s:%d:%i:%u:vetvnrej", 'F', "HEY LES MEC", -65984565, -659865, 659865), 
@@ -86,9 +86,9 @@ void	main(void)
 	int j;
 
 	printf("\noutput of real:\n");
-	i = printf(";%s;R", NULL);
+	i = printf(";%u;R", -1);
 	printf("\noutput of fake:\n");
-	j = ft_printf(";%s;F", NULL);
+	j = ft_printf(";%u;F", -1);
 
 	printf("\n\nreal:%d,fake:%d",i,j);
-}*/
+}
