@@ -6,23 +6,12 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:19:39 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 21:56:07 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 22:04:45 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-
-typedef struct s_flag
-{
-	int	type;
-	int	width;
-	int	moin;
-	int	zero;
-	int	point;
-	int	star;
-}	t_flag;
-
 
 # include <unistd.h>
 # include <stdlib.h>
