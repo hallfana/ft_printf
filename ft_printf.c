@@ -6,15 +6,20 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:18:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 21:11:19 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 21:19:48 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	route_arg(va_list ap, char *fmt)
+int	ft_route_arg(va_list ap, char *fmt, int i)
 {
-	
+	int	printed;
+
+	printed = 0;
+	if (fmt[i + 1] == 'c')
+		printed += ft_print_c((int)va_arg(ap, int));
+	return (printed);
 }
 
 int	ft_printf(const char *fmt, ...)
@@ -30,11 +35,11 @@ int	ft_printf(const char *fmt, ...)
 	{
 		if (fmt[i] == '%')
 		{
-			len += 0;
+			len += ft_route_arg(ap, fmt, i);
 			i++;
 			continue ;
 		}
-		print_c((int)fmt[i]);
+		ft_print_c((int)fmt[i]);
 		len++;
 		i++;
 	}
