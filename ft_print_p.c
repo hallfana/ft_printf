@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 00:39:56 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/12 00:58:31 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 00:58:41 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int ft_print_p(unsigned long long nb)
     char	*s;
     int 	l;
 
+	l = 0;
     s = ft_to_base_16_ull(nb);
 	if (s && ft_strlen(s) > 0)
 		l += ft_print_s("0x");
