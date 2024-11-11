@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:18:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 23:13:55 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 23:26:25 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	ft_printf(const char *fmt, ...)
 	return (len);
 }
 
-
+/*
 void	main(void)
 {
 	//printf("real \n%d\n, fake \n%d\n", printf("rehtg:%%:%c:%s:%d:%i:%u:vetvnrej", 'F', "HEY LES MEC", -65984565, -659865, 659865), 
@@ -86,9 +86,9 @@ void	main(void)
 	int j;
 
 	printf("\noutput of real:\n");
-	i = printf(";%u;R", -1);
+	i = printf(";%u;R", -104531);
 	printf("\noutput of fake:\n");
-	j = ft_printf(";%u;F", -1);
+	j = ft_printf(";%u;F", -145301);
 
 	printf("\n\nreal:%d,fake:%d",i,j);
-}
+}*/
