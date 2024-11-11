@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:18:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 21:49:41 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 21:56:59 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int	ft_route_arg(va_list ap, const char *fmt, int *i)
 	if (fmt[*i + 1] && fmt[*i + 1] == 'd')
 		printed += ft_print_d((long)va_arg(ap, long));
 	if (fmt[*i + 1] && fmt[*i + 1] == 'i')
-		printed += ft_print_d((long)va_arg(ap, int));
+		printed += ft_print_d((int)va_arg(ap, int));
 	if (fmt[*i + 1] && fmt[*i + 1] == 'u')
-		printed += ft_print_d((long)va_arg(ap, unsigned int));
+		printed += ft_print_d((unsigned int)va_arg(ap, unsigned int));
 	/*if (fmt[*i + 1] && fmt[*i + 1] == 'x')
 		;
 	if (fmt[*i + 1] && fmt[*i + 1] == 'X')
@@ -65,5 +65,5 @@ int	ft_printf(const char *fmt, ...)
 
 void	main(void)
 {
-	ft_printf("rehtg:%c:%s:%d:%i:%u:vetvnrej", 'F', "HEY LES MEC", -659865, -659865, 659865);
+	ft_printf("rehtg:%c:%s:%d:%i:%u:vetvnrej", 'F', "HEY LES MEC", -65984565, -659865, 659865);
 }
