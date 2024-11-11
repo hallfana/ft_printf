@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:19:39 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 23:51:18 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 00:18:48 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ char	*ft_strndup(const char *s, size_t sw);
 size_t	ft_strlen(const char *s);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_print_u(unsigned int n);
+int 	nblen_u(long n);
 
 #endif
