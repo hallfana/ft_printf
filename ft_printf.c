@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:18:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 22:16:20 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 22:16:53 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,9 @@ int	ft_printf(const char *fmt, ...)
 	}
 	return (0);
 }
-
+/*
 void	main(void)
 {
 	ft_printf("rehtg:%%:%c:%s:%d:%i:%u:vetvnrej", 'F', "HEY LES MEC", -65984565, -659865, 659865);
 }
+*/
