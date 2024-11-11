@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:18:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 21:57:21 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 21:59:33 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	ft_printf(const char *fmt, ...)
 	int		len;
 	va_list	ap;
 	int		i;
+	int		ti;
 
 	va_start(ap, fmt);
 	len = 0;
@@ -53,7 +54,11 @@ int	ft_printf(const char *fmt, ...)
 	{
 		if (fmt[i] == '%')
 		{
-			len += ft_route_arg(ap, fmt, &i);
+			ti = ft_route_arg(ap, fmt, &i);
+			if (ti == 0)
+				len += ft_print_c('%');
+			else
+				len += ti;
 			continue ;
 		}
 		ft_print_c(fmt[i]);
