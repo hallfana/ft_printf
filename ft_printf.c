@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:18:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 22:01:38 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 22:16:20 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	ft_route_arg(va_list ap, const char *fmt, int *i)
 	/*if (fmt[*i + 1] && fmt[*i + 1] == 'x')
 		;
 	if (fmt[*i + 1] && fmt[*i + 1] == 'X')
-		;
-	if (fmt[*i + 1] && fmt[*i + 1] == '%')*/
-		//printed += ft_print_pourcent();
+		;*/
+	if (fmt[*i + 1] && fmt[*i + 1] == '%')
+		printed += ft_print_c('%');
 	if (printed != 0)
 		*i += 2;
 	else
@@ -69,9 +69,8 @@ int	ft_printf(const char *fmt, ...)
 	}
 	return (0);
 }
-/*
+
 void	main(void)
 {
-	ft_printf("rehtg:%p:%c:%s:%d:%i:%u:vetvnrej", 'F', "HEY LES MEC", -65984565, -659865, 659865);
+	ft_printf("rehtg:%%:%c:%s:%d:%i:%u:vetvnrej", 'F', "HEY LES MEC", -65984565, -659865, 659865);
 }
-*/
