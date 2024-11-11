@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 00:39:56 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/12 00:49:54 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 00:51:16 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 int ft_print_p(unsigned long long nb)
 {
     char	*s;
+	char	*d;
     int		l;
 
     s = ft_to_base_16_ull(nb);
-	l = ft_print_s(ft_strjoin("0x", s));
+	d = ft_strjoin("0x", s);
+	l = ft_print_s(d);
+	free(d);
 	free(s);
 	return (l);
 }
