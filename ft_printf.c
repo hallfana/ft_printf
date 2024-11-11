@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:18:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 21:21:09 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 21:25:36 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_route_arg(va_list ap, const char *fmt, int i)
 
 	printed = 0;
 	if (fmt[i + 1] == 'c')
-		printed += ft_print_c((int)va_arg(ap, int));
+		printed += ft_print_c((char)va_arg(ap, int));
 	return (printed);
 }
 
