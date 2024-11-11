@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 00:39:56 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/12 00:51:16 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 00:54:04 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,10 @@ int ft_print_p(unsigned long long nb)
     int		l;
 
     s = ft_to_base_16_ull(nb);
-	d = ft_strjoin("0x", s);
-	l = ft_print_s(d);
-	free(d);
+	if ((int)ft_strlen(s) > 0)
+		d = ft_strjoin("0x", s);
+		l = ft_print_s(d);
+		free(d);
 	free(s);
 	return (l);
 }
