@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:18:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 21:59:33 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 22:01:12 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	ft_route_arg(va_list ap, const char *fmt, int *i)
 		//printed += ft_print_pourcent();
 	if (printed != 0)
 		*i += 2;
+	else
+		*i += 1;
 	return (printed);
 }
 
@@ -68,7 +70,7 @@ int	ft_printf(const char *fmt, ...)
 	return (0);
 }
 
-//void	main(void)
-//{
-//	ft_printf("rehtg:%c:%s:%d:%i:%u:vetvnrej", 'F', "HEY LES MEC", -65984565, -659865, 659865);
-//}
+void	main(void)
+{
+	ft_printf("rehtg:%p:%c:%s:%d:%i:%u:vetvnrej", 'F', "HEY LES MEC", -65984565, -659865, 659865);
+}
