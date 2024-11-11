@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:19:39 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 22:36:00 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 22:50:40 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_printf(const char *fmt, ...);
 int		ft_print_c(char	c);
 int		ft_print_s(char	*str);
 int 	ft_print_d(int	nb);
-int		ft_route_arg(va_list ap, const char *fmt, int *i);
+void	ft_route_arg(va_list ap, const char *fmt, int *i, int *len);
 char	*ft_strdup(const char *s);
 char	*ft_strndup(const char *s, size_t sw);
 size_t	ft_strlen(const char *s);

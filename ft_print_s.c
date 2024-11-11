@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:41:50 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 22:36:36 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/11 22:55:39 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 int	ft_print_s(char	*str)
 {
 	int	i;
+	int	p;
 
 	i = 0;
-	if (!str || ft_strcmp(str, "") == 0)
+	p = 0;
+	if (!str)
 		return (0);
 	while (str[i])
 	{
 		write(1, &str[i], 1);
+		p++;
 		i++;
 	}
-	return (i);
+	return (p);
 }
