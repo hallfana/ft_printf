@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 00:39:56 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/12 00:55:38 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 00:58:31 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,45 +52,15 @@ char *ft_to_base_16_ull(unsigned long long n)
 	return (dst);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	size_t	i;
-	char	*str;
-
-	if (!s1 || !s2)
-		return (NULL);
-	i = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!str)
-		return (NULL);
-	while (i < ft_strlen(s1))
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	while (i < (ft_strlen(s1) + ft_strlen(s2)))
-	{
-		str[i] = s2[i - ft_strlen(s1)];
-		i++;
-	}
-	str[i] = 0;
-	return (str);
-}
-
 int ft_print_p(unsigned long long nb)
 {
     char	*s;
-	char	*d;
-    int		l;
+    int 	l;
 
     s = ft_to_base_16_ull(nb);
-	l = 0;
 	if (s && ft_strlen(s) > 0)
-	{
-		d = ft_strjoin("0x", s);
-		l = ft_print_s(d);
-		free(d);
-	}
+		l += ft_print_s("0x");
+	l = ft_print_s(s);
 	free(s);
 	return (l);
 }
