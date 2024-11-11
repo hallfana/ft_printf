@@ -27,4 +27,4 @@ fclean : clean
 re : fclean all
 
 dev :
-	git add .; git commit -m 'auto update'; git push; francinette
+	git add .; git commit -m 'auto update'; git push; /home/hallfana/francinette/tester.sh
