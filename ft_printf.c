@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:18:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/12 00:37:45 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 00:50:04 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	ft_route_arg(va_list ap, const char *fmt, int *i, int *len)
 		*len += ft_print_c((char)va_arg(ap, int));
 	if (fmt[*i + 1] && fmt[*i + 1] == 's')
 		*len += ft_print_s((char*)va_arg(ap, char*));
-	/*if (fmt[*i + 1] && fmt[*i + 1] == 'p')
-		;*/
+	if (fmt[*i + 1] && fmt[*i + 1] == 'p')
+		*len += ft_print_p((unsigned long long)va_arg(ap, unsigned long long));
 	if (fmt[*i + 1] && fmt[*i + 1] == 'd')
 		*len += ft_print_d((long)va_arg(ap, long));
 	if (fmt[*i + 1] && fmt[*i + 1] == 'i')
@@ -84,10 +84,12 @@ int	ft_printf(const char *fmt, ...)
 	int i;
 	int j;
 
+	int g = 45;
+
 	printf("\noutput of real:\n");
-	i = printf(";%X;R", -101);
+	i = printf(";%p;R", &g);
 	printf("\noutput of fake:\n");
-	j = ft_printf(";%X;F", -101);
+	j = ft_printf(";%p;F", &g);
 
 	printf("\n\nreal:%d,fake:%d",i,j);
 }*/
