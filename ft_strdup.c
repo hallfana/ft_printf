@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:54:57 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/12 00:35:02 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 00:35:51 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ char	*ft_toupper(char *c)
 	while (c[i])
 	{
 		c[i] = c[i] - 32;
+		i++;
 	}
 	return (c);
 }
