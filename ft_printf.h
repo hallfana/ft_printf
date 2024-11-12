@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:19:39 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/12 01:12:15 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 01:17:41 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int 	nblen_u(long n);
 int		ft_print_x(unsigned int nb);
 int		ft_print_X(unsigned int nb);
 char	*ft_toupper_hex(char *c);
-int 	ft_print_p(long long nb);
-int		ft_print_p_parser(long long nb);
+int 	ft_print_p(unsigned long long nb);
 
 #endif

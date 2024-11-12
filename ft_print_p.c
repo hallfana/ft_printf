@@ -6,13 +6,13 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 00:39:56 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/12 01:11:47 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 01:19:44 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int nblen_x_ull(long long n)
+int nblen_x_ull(unsigned long long n)
 {
     int	len;
 
@@ -27,32 +27,32 @@ int nblen_x_ull(long long n)
     return (len);
 }
 
-char *ft_to_base_16_ull(long long n)
+char *ft_to_base_16_ull(unsigned long long n)
 {
-    long	nb;
-	char	*dst;
-    int 	i;
+	unsigned long long	n_tmp;
+	char				*dst;
+    int 				i;
 
-	nb = n;
+	n_tmp = n;
     if (n == 0)
 		return ft_strdup("0");
-    dst = (char *)malloc(sizeof(char) * (nblen_x_ull(nb) + 1));
+    dst = (char *)malloc(sizeof(char) * (nblen_x_ull(n) + 1));
     if (!dst)
         return NULL;
-    i = nblen_x_ull(nb) - 1;
-	while (nb > 0)
+    i = nblen_x_ull(n) - 1;
+	while (n_tmp > 0)
 	{
-		if (nb % 16 < 10)
-        	dst[i--] = (nb % 16) + 48;
+		if (n_tmp % 16 < 10)
+        	dst[i--] = (n_tmp % 16) + 48;
 		else
-			dst[i--] = (nb % 16) + 87;
-        nb /= 16;
+			dst[i--] = (n_tmp % 16) + 87;
+        n_tmp /= 16;
     }
     dst[nblen_x_ull(n)] = '\0';
 	return (dst);
 }
 
-int ft_print_p(long long nb)
+int ft_print_p(unsigned long long nb)
 {
     char	*s;
     int 	l;
@@ -66,14 +66,4 @@ int ft_print_p(long long nb)
 	l += ft_print_s(s);
 	free(s);
 	return (l);
-}
-
-int ft_print_p_parser(long long nb)
-{
-    if (nb == LONG_MIN)
-        return ft_print_p((unsigned long long)(-(nb + 1)) + 1);
-    else if (nb < 0)
-        return ft_print_p((unsigned long long)(-nb));
-    else
-        return ft_print_p((unsigned long long)nb);
 }
