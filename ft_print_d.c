@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:39:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 22:55:45 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 01:27:19 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*ft_itoa(int n)
 	return (dst);
 }
 
-int ft_print_d(int	nb)
+int	ft_print_d(int nb)
 {
 	char	*s;
 	int		l;

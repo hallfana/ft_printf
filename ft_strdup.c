@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:54:57 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/12 00:53:14 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 01:27:59 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
+
 char	*ft_toupper_hex(char *c)
 {
 	int	i;
@@ -68,7 +69,7 @@ char	*ft_toupper_hex(char *c)
 	i = 0;
 	while (c[i])
 	{
-		if (c[i]>= 97 && c[i] <= 122)
+		if (c[i] >= 97 && c[i] <= 122)
 			c[i] = c[i] - 32;
 		i++;
 	}

@@ -6,13 +6,13 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:41:50 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/11 22:55:33 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 01:30:11 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_c(char	c)
+int	ft_print_c(char c)
 {
 	write(1, &c, 1);
 	return (1);

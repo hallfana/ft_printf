@@ -6,7 +6,7 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:18:35 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/12 01:21:13 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 01:28:38 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_route_arg(va_list ap, const char *fmt, int *i, int *len)
 	if (fmt[*i + 1] && fmt[*i + 1] == 'c')
 		*len += ft_print_c((char)va_arg(ap, int));
 	if (fmt[*i + 1] && fmt[*i + 1] == 's')
-		*len += ft_print_s((char*)va_arg(ap, char*));
+		*len += ft_print_s((char *)va_arg(ap, char *));
 	if (fmt[*i + 1] && fmt[*i + 1] == 'p')
 		*len += ft_print_p((unsigned long long)va_arg(ap, unsigned long long));
 	if (fmt[*i + 1] && fmt[*i + 1] == 'd')
@@ -45,7 +45,7 @@ void	ft_route_arg(va_list ap, const char *fmt, int *i, int *len)
 	if (fmt[*i + 1] && fmt[*i + 1] == 'x')
 		*len += ft_print_x((unsigned int)va_arg(ap, unsigned int));
 	if (fmt[*i + 1] && fmt[*i + 1] == 'X')
-		*len += ft_print_X((unsigned int)va_arg(ap, unsigned int));
+		*len += ft_print_x_big((unsigned int)va_arg(ap, unsigned int));
 	if (fmt[*i + 1] && fmt[*i + 1] == '%')
 		len += ft_print_c('%');
 }
@@ -79,17 +79,15 @@ int	ft_printf(const char *fmt, ...)
 
 /*void	main(void)
 {
-	//printf("real \n%d\n, fake \n%d\n", printf("rehtg:%%:%c:%s:%d:%i:%u:vetvnrej", 'F', "HEY LES MEC", -65984565, -659865, 659865), 
-	//ft_printf("rehtg:%%:%c:%s:%d:%i:%u:vetvnrej", 'F', "HEY LES MEC", -65984565, -659865, 659865));
 	int i;
 	int j;
 
 	int g = 45;
 
 	printf("\noutput of real:\n");
-	i = printf(";%p;R", LONG_MIN);
+	i = printf(";%p;R", (-9223372036854775807L - 1));
 	printf("\noutput of fake:\n");
-	j = ft_printf(";%p;F", LONG_MIN);
+	j = ft_printf(";%p;F", (-9223372036854775807L - 1));
 
 	printf("\n\nreal:%d,fake:%d",i,j);
 }*/
