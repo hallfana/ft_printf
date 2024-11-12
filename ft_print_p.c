@@ -6,13 +6,13 @@
 /*   By: samberna <samberna@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 00:39:56 by samberna          #+#    #+#             */
-/*   Updated: 2024/11/12 01:00:43 by samberna         ###   ########.fr       */
+/*   Updated: 2024/11/12 01:02:16 by samberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int nblen_x_ull(unsigned long long n)
+int nblen_x_ull(long long n)
 {
     int	len;
 
@@ -27,7 +27,7 @@ int nblen_x_ull(unsigned long long n)
     return (len);
 }
 
-char *ft_to_base_16_ull(unsigned long long n)
+char *ft_to_base_16_ull(long long n)
 {
     long	nb;
 	char	*dst;
@@ -52,7 +52,7 @@ char *ft_to_base_16_ull(unsigned long long n)
 	return (dst);
 }
 
-int ft_print_p(unsigned long long nb)
+int ft_print_p(long long nb)
 {
     char	*s;
     int 	l;
